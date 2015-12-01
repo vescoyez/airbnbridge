@@ -1,0 +1,31 @@
+<%= form_for @bridge do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bridge_type %>
+    <%= f.text_field :bridge_type, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :capacity %>
+    <%= f.text_field :capacity, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :country %>
+    <%= f.text_field :country, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+  <%= f.submit "Rent your bridge", class: 'btn btn-primary' %>
+<% end %>

@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20151201110929) do
     t.string   "address"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "price"
   end
 
   add_index "bridges", ["user_id"], name: "index_bridges_on_user_id", using: :btree
