@@ -1,2 +1,7 @@
 <h1>Bridges#index</h1>
 <p>Find me in app/views/bridges/index.html.erb</p>
+<ul>
+  <% @bridges.each do |bridge| %>
+    <li><%= bridge.name %></li>
+  <% end %>
+</ul>
