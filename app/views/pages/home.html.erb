@@ -1,2 +1,13 @@
 <h1>Pages#home</h1>
-<%= link_to "Search", bridges_path %>
+
+<%= form_tag(bridges_path, method: "get") do %>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %>
+  <%= label_tag :checkin %>
+  <%= text_field_tag :checkin %>
+  <%= label_tag :checkout %>
+  <%= text_field_tag :checkout %>
+  <%= label_tag :people %>
+  <%= text_field_tag :people %>
+  <%= submit_tag("Search") %>
+<% end %>
