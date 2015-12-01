@@ -1,2 +1,10 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
+
+<h2>Recap</h2>
+<h3>Hello <%= current_user.first_name %></h3>
+<p>Booking nr: <%= @booking.id %></p>
+<p>Checkin Date: <%= @booking.checkin_date %></p>
+<p>Checkout Date: <%= @booking.checkout_date %></p>
+<p>Price: <%= @booking.price %></p>
+<p>Number of people: <%= @booking.people %></p>

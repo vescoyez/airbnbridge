@@ -1,2 +1,15 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+
+<h2><%= @bridge.name %></h2>
+<h3><%= @bridge.description %></h3>
+<p> <%= @bridge.address + " " + @bridge.city + " "+ @bridge.country %></p>
+
+<%= simple_form_for [@bridge, @booking] do |f| %>
+  <%= f.input :checkin_date %>
+  <%= f.input :checkout_date %>
+  <%= f.input :people %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
+
