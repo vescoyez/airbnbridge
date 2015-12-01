@@ -1,8 +1,10 @@
 class BridgesController < ApplicationController
   def index
+    @bridges = Bridge.all
   end
 
   def new
+    @bridge = Bridge.new
   end
 
   def create
