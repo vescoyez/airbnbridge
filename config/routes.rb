@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'bridges/index'
-
-  get 'bridges/new'
-
-  get 'bridges/show'
-
-  get 'bridges/edit'
+  resources :bridges
 
   devise_for :users
   root to: 'pages#home'
