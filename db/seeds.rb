@@ -19,14 +19,15 @@ end
 10.times do
   Bridge.create(
     {
-      name: Faker::App.name,
+      name: Faker::App.name + " Bridge",
       bridge_type: "modern",
       description: Faker::Lorem.sentence,
       capacity: (1..10).to_a.sample,
       user_id: User.all.sample.id,
       country: Faker::Address.country,
       city: Faker::Address.city,
-      address: Faker::Address.street_address
+      address: Faker::Address.street_address,
+      price: [0.5,1,2].sample
     }
   )
 end
