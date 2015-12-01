@@ -55,6 +55,6 @@ class BridgesController < ApplicationController
   end
 
   def bridge_params
-    params.require(:bridge).permit([:name, :bridge_type, :description, :capacity, :country, :city, :address])
+    params.require(:bridge).permit([:name, :bridge_type, :description, :capacity, :country, :city, :address, :price])
   end
 end
