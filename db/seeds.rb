@@ -5,3 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Bridge.destroy_all
+
+10.times do
+  user = User.new
+  user.email = Faker::Internet.email
+  user.password = 'password'
+  user.password_confirmation = 'password'
+  user.save!
+end
+
+10.times do
+  Bridge.create(
+    {
+      name: Faker::App.name,
+      bridge_type: "modern",
+      description: Faker::Lorem.sentence,
+      capacity: (1..10).to_a.sample,
+      user_id: User.all.sample.id,
+      country: Faker::Address.country,
+      city: Faker::Address.city,
+      address: Faker::Address.street_address
+    }
+  )
+end
