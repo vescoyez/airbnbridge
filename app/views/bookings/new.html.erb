@@ -8,9 +8,9 @@
 <p> <strong>Price</strong>: <%= @bridge.price %> </p>
 
 <%= simple_form_for [@bridge, @booking] do |f| %>
-  <%= f.input :checkin_date, placeholder: params[:checkin] %>
-  <%= f.input :checkout_date, placeholder: params[:checkout] %>
-  <%= f.input :people, placeholder: params[:people] %>
+  <%= f.input :checkin_date, input_html: { value: params[:checkin] } %>
+  <%= f.input :checkout_date, input_html: { value: params[:checkout] } %>
+  <%= f.input :people, input_html: { value: params[:people] } %>
   <%= f.button :submit, class: "btn btn-success" %>
 <% end %>
 
