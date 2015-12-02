@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :bridges do
-    resources :bookings, only: [:index, :show, :new, :create, :destroy]
+    resources :bookings, only: [:index, :show, :new, :create]
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
