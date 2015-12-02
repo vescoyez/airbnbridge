@@ -2,6 +2,6 @@
 <p>Find me in app/views/bridges/index.html.erb</p>
 <ul>
   <% @bridges.each do |bridge| %>
-    <li><%= link_to bridge.name, bridge_path(bridge) %></li>
+    <li><%= link_to bridge.name, bridge_path(bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]) %></li>
   <% end %>
 </ul>
