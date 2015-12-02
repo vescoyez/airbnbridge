@@ -1,10 +1,8 @@
 <h1>Recap of bookings</h1>
 <p>Below a list of all the bookings of your bridge</p>
 
-<% counter = 0 %>
-<% @bookings.each do |booking| %>
-<% counter += 1 %>
-<h2>Booking nr: <%= counter %></h2>
+<% @bookings.each_with_index do |booking, index| %>
+<h2>Booking nr: <%= index + 1 %></h2>
   <ul>
     <li>Checkin date: <%= booking.checkin_date %></li>
     <li>Checkout date: <%= booking.checkout_date %></li>

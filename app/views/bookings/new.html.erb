@@ -3,7 +3,7 @@
 
 <p>Bridge <strong><%= @bridge.name %></strong></p>
 <p><em><%= @bridge.description %></em></p>
-<p> <%= @bridge.address + " " + @bridge.city + " "+ @bridge.country %></p>
+<p> <%= "#{@bridge.address} #{@bridge.city} #{@bridge.country}" %></p>
 
 <%= simple_form_for [@bridge, @booking] do |f| %>
   <%= f.input :checkin_date %>
