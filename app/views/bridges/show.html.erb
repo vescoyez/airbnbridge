@@ -1,4 +1,18 @@
 <h1><%= @bridge.name %></h1>
-<p>Find me in app/views/bridges/show.html.erb</p>
+<h2>Bridge details</h2>
 
-<%= link_to "Edit bridge", edit_bridge_path %>
+<ol>
+  <li><strong>Description: </strong><%= @bridge.bridge_type %></li>
+  <li><strong>Type: </strong><%= @bridge.description %></li>
+  <li><strong>Address: </strong>
+    <ul><%= @bridge.address %></ul>
+    <ul><%= @bridge.city %></ul>
+    <ul><%= @bridge.country %></ul>
+  </li>
+  <li><strong>Capacity: </strong><%= @bridge.capacity %></li>
+  <li><strong>Price: </strong><%= @bridge.price %></li>
+</ol>
+<%= link_to 'Go back', bridges_path, class: "btn btn-primary"%>
+<%= link_to "Edit bridge", edit_bridge_path, class: "btn btn-danger" %>
+<%= link_to 'Confirm booking', new_bridge_booking_path(@bridge), class: "btn btn-success"%>
+
