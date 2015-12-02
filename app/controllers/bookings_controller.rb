@@ -28,9 +28,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
 
   def set_bridge
