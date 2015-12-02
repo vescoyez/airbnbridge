@@ -5,7 +5,9 @@
   </div>
   <div class="form-group">
     <%= f.label :bridge_type %>
-    <%= f.text_field :bridge_type, class: "form-control" %>
+    <%= f.select :bridge_type do %>
+      <%= options_for_select(@bridge_type) %>
+    <% end %>
   </div>
   <div class="form-group">
     <%= f.label :description %>

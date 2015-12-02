@@ -6,6 +6,7 @@ class BridgesController < ApplicationController
   end
 
   def new
+    @bridge_type = Bridge::BRIDGE_TYPES
     @bridge = Bridge.new
   end
 
