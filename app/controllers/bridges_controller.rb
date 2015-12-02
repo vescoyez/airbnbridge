@@ -12,6 +12,7 @@ class BridgesController < ApplicationController
 
   def create
     @bridge = current_user.bridges.build(bridge_params)
+    @bridge_type = Bridge::BRIDGE_TYPES
     respond_to do |format|
       if @bridge.save
         format.html { redirect_to @bridge, notice: 'Bridge was successfully created.' }
@@ -27,9 +28,11 @@ class BridgesController < ApplicationController
   end
 
   def edit
+    @bridge_type = Bridge::BRIDGE_TYPES
   end
 
   def update
+    @bridge_type = Bridge::BRIDGE_TYPES
     respond_to do |format|
       if @bridge.update(bridge_params)
         format.html { redirect_to @bridge, notice: 'Bridge was successfully updated.' }

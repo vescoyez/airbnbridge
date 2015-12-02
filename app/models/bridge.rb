@@ -5,5 +5,7 @@ class Bridge < ActiveRecord::Base
   has_many :bookings
   validates :name, presence: true, uniqueness: true
   validates :bridge_type, presence: true, inclusion: { in:  BRIDGE_TYPES }
+  validates :capacity, presence: true, numericality: { only_integer: true }
+  validates :price, presence: true, numericality: true
 end
 
