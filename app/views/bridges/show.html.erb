@@ -1,4 +1,29 @@
-<h1><%= @bridge.name %></h1>
-<p>Find me in app/views/bridges/show.html.erb</p>
+<h1>Bridge Summary</h1>
+<h2>Name: <%= @bridge.name %></h2>
+<table class="table table-striped table-hover table-responsive">
+  <tr>
+    <td><strong>Type</strong></td>
+    <td><%= @bridge.bridge_type.capitalize %></td>
+  </tr>
+   <tr>
+    <td><strong>Description</strong></td>
+    <td><%= @bridge.description %></td>
+  </tr>
+   <tr>
+    <td><strong>Address</strong></td>
+    <td><%= @bridge.address %></td>
+  </tr>
+  <tr>
+    <td><strong>Capacity</strong></td>
+    <td><%= @bridge.capacity %></td>
+  </tr>
+   <tr>
+    <td><strong>Price</strong></td>
+    <td><%= @bridge.price %></td>
+  </tr>
+</table>
 
-<%= link_to "Edit bridge", edit_bridge_path %>
+
+<%= link_to "Homepage", root_path, class: "btn btn-primary"  %>
+<%= link_to "Edit bridge", edit_bridge_path, class: "btn btn-warning"%>
+<%= link_to "Delete bridge", bridge_path(@bridge), method: :delete, class: "btn btn-danger" %>

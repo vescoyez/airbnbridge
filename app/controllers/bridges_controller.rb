@@ -2,15 +2,17 @@ class BridgesController < ApplicationController
   before_action :set_bridge, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bridges = Bridge.where(city: params[:city])
+    @bridges = Bridge.near(params[:city], 20)
   end
 
   def new
+    @bridge_type = Bridge::BRIDGE_TYPES
     @bridge = Bridge.new
   end
 
   def create
     @bridge = current_user.bridges.build(bridge_params)
+    @bridge_type = Bridge::BRIDGE_TYPES
     respond_to do |format|
       if @bridge.save
         format.html { redirect_to @bridge, notice: 'Bridge was successfully created.' }
@@ -26,9 +28,11 @@ class BridgesController < ApplicationController
   end
 
   def edit
+    @bridge_type = Bridge::BRIDGE_TYPES
   end
 
   def update
+    @bridge_type = Bridge::BRIDGE_TYPES
     respond_to do |format|
       if @bridge.update(bridge_params)
         format.html { redirect_to @bridge, notice: 'Bridge was successfully updated.' }
