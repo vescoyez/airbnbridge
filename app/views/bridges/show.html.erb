@@ -1,3 +1,4 @@
+
 <h1>Bridge Summary</h1>
 <h2>Name: <%= @bridge.name %></h2>
 <table class="table table-striped table-hover table-responsive">
@@ -27,3 +28,4 @@
 <%= link_to "Homepage", root_path, class: "btn btn-primary"  %>
 <%= link_to "Edit bridge", edit_bridge_path, class: "btn btn-warning"%>
 <%= link_to "Delete bridge", bridge_path(@bridge), method: :delete, class: "btn btn-danger" %>
+<%= link_to "Book this bridge", new_bridge_booking_path(@bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]), class: "btn btn-success" %>
