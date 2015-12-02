@@ -1,8 +1,8 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Confirm your booking options</h1>
+<p>Almost there...</p>
 
-<h2><%= @bridge.name %></h2>
-<h3><%= @bridge.description %></h3>
+<p>Bridge <strong><%= @bridge.name %></strong></p>
+<p><em><%= @bridge.description %></em></p>
 <p> <%= @bridge.address + " " + @bridge.city + " "+ @bridge.country %></p>
 
 <%= simple_form_for [@bridge, @booking] do |f| %>
@@ -12,4 +12,6 @@
   <%= f.input :price %>
   <%= f.button :submit %>
 <% end %>
+
+ <%= link_to 'Go back', bridge_path(@bridge), class: "btn btn-primary"%>
 

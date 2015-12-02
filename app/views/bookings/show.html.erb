@@ -1,10 +1,14 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1>Hello <%= current_user.first_name %>, this is your booking recap</h1>
+<h2><%= @booking.bridge.name %></h2>
 
-<h2>Recap</h2>
-<h3>Hello <%= current_user.first_name %></h3>
-<p>Booking nr: <%= @booking.id %></p>
-<p>Checkin Date: <%= @booking.checkin_date %></p>
-<p>Checkout Date: <%= @booking.checkout_date %></p>
-<p>Price: <%= @booking.price %></p>
-<p>Number of people: <%= @booking.people %></p>
+  <ul>
+    <li>Checkin date: <%= @booking.checkin_date %></li>
+    <li>Checkout date: <%= @booking.checkout_date %></li>
+    <li>Price: <%= @booking.price %> €</li>
+      <% if @booking.people == 1  %>
+        <li><%= @booking.people %> hobo occupied</li>
+      <% else %>
+        <li><%= @booking.people %> hobos occupied</li>
+      <% end %>
+  </ul>
+  <%= link_to 'Go back', bridge_bookings_path, class: "btn btn-primary"%>
