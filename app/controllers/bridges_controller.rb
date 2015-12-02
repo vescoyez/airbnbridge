@@ -2,7 +2,7 @@ class BridgesController < ApplicationController
   before_action :set_bridge, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bridges = Bridge.where(city: params[:city])
+    @bridges = Bridge.near(params[:city], 20)
   end
 
   def new
