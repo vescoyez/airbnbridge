@@ -1,0 +1,10 @@
+<h1>Comment nr: <%= @comment.id %></h1>
+<p><strong>Venue</strong>: <%= @bridge.name %></p>
+<p><strong>Booking nr</strong>: <%= @booking.id %></p>
+
+<ul>
+    <li><strong>Rating</strong>: <%= @comment.rating %></li>
+    <li><strong>What you said</strong>: <%= @comment.content %></li>
+</ul>
+
+<%= link_to 'Go back', bridge_booking_comments_path, class: "btn btn-primary" %>

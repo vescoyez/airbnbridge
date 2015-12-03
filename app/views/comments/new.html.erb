@@ -1,0 +1,17 @@
+<h1>Review your experience</h1>
+
+
+<p><strong>Bridge</strong>: <%= @bridge.name %></p>
+<p><strong>Description</strong>: <em><%= @bridge.description %></em></p>
+<p><strong>Address</strong>: <%= @bridge.address %></p>
+<p> <strong>Price</strong>: <%= @bridge.price %> </p>
+
+<%= simple_form_for [@bridge, @booking, @comment] do |f| %>
+  <%= f.input :rating, collection: 0..5, selected: 3, hint: 'Select between 0 and 5.' %>
+  <%= f.input :content, placeholder: 'How was your time under this bridge?' %>
+  <%= f.button :submit, "Add Review", class: "btn btn-success" %>
+<% end %>
+
+
+
+ <%= link_to 'Go back', bridge_path(@bridge), class: "btn btn-primary"%>
