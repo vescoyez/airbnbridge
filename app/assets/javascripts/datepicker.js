@@ -1,0 +1,2 @@
+$("#checkin").datepicker();
+$("#checkout").datepicker();
