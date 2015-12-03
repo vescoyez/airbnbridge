@@ -4,8 +4,8 @@
       <%= form_tag bridges_path, method: "get", class: "inline-form home-form" do %>
         <div class="input-group">
           <%= text_field_tag :city, nil, {placeholder: "Where do you want to go?", class: "form-control"} %>
-          <%= text_field_tag :checkin, nil, {placeholder: "Checkin", class: "form-control"} %>
-          <%= text_field_tag :checkout, nil, {placeholder: "Checkout", class: "form-control"} %>
+          <%= text_field_tag :checkin, nil, {placeholder: "Checkin", class: "form-control", autocomplete: "off"} %>
+          <%= text_field_tag :checkout, nil, {placeholder: "Checkout", class: "form-control", autocomplete: "off"} %>
           <%= select_tag :people, options_for_select((1..10).to_a.map { |i| ["#{i} Hobo#{if i>1 then 's' end}", i] }, "2"), class: "form-control" %>
           <span class="input-group-btn">
             <%= submit_tag "Search", class: "btn btn-primary" %>
