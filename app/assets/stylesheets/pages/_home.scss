@@ -2,3 +2,39 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+
+.home-bg {
+  padding: 200px 0;
+  background: image-url('home-bg.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.home-form {
+  padding: 12px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 4px;
+
+  .form-control {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+  }
+
+  .form-control ~ .form-control {
+    border-left: 1px solid #ddd;
+  }
+
+  #city {
+    width: 40%;
+  }
+  #checkin {
+    width: 20%;
+  }
+  #checkout {
+    width: 20%;
+  }
+  #people {
+    width: 20%;
+  }
+}
+
