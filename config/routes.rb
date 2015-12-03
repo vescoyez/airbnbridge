@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     end
   end
 
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  get 'bridges/:id/comments', to: 'bridges#show_comments', as: 'bridge_comments'
   root to: 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

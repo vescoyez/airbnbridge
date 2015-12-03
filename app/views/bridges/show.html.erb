@@ -25,7 +25,9 @@
 </table>
 
 
-<%= link_to "Homepage", root_path, class: "btn btn-primary"  %>
+<%= link_to "Go back to bridges", bridges_path(@bridges), class: "btn btn-primary"  %>
+
 <%= link_to "Edit bridge", edit_bridge_path, class: "btn btn-warning"%>
 <%= link_to "Delete bridge", bridge_path(@bridge), method: :delete, class: "btn btn-danger" %>
 <%= link_to "Book this bridge", new_bridge_booking_path(@bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]), class: "btn btn-success" %>
+<%= link_to "View reviews", bridge_comments_path(@bridge)  %>

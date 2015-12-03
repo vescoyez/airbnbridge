@@ -1,7 +1,13 @@
 <h1>Bridges#index</h1>
 <p>Find me in app/views/bridges/index.html.erb</p>
-<ul>
+<ol>
   <% @bridges.each do |bridge| %>
-    <li><%= link_to bridge.name, bridge_path(bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]) %></li>
+    <p><%= link_to bridge.name, bridge_path(bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]) %></p>
+    <ul>
+      <li><strong>Type</strong>: <%= bridge.bridge_type %></li>
+      <li><strong>Description</strong>: <%= truncate(bridge.description, length: 100) %></li>
+      <li><strong>Max capacity</strong>: <%= bridge.capacity %></li>
+      <li><strong>Price per night</strong>: <%= bridge.price %></li>
+    </ul>
   <% end %>
-</ul>
+</ol>
