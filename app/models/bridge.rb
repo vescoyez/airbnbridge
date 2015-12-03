@@ -3,7 +3,7 @@ class Bridge < ActiveRecord::Base
 
   BRIDGE_TYPES = %w(arch viaduct suspension log steel concrete clapped moon movable).sort
   has_many :bookings
-
+  has_many :comments, :through => :bookings
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

@@ -1,5 +1,5 @@
 class BridgesController < ApplicationController
-  before_action :set_bridge, only: [:show, :edit, :update, :destroy]
+  before_action :set_bridge, only: [:show, :edit, :update, :destroy, :show_comments]
 
   def index
     @bridges = Bridge.near(params[:city], 20)
@@ -51,6 +51,10 @@ class BridgesController < ApplicationController
       format.html { redirect_to bridges_url, notice: 'Bridge was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def show_comments
+    @comments = @bridge.comments
   end
 
   private

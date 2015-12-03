@@ -1,0 +1,9 @@
+<h1>Reviews for <%= @bridge.name %></h1>
+<% @comments.each_with_index do |comment, index| %>
+<h2>Review nr: <%= index + 1 %></h2>
+<ul>
+  <li><strong>Rating</strong>: <%= comment.rating %></li>
+  <li><strong>Review</strong>: <%= comment.content %> %></li>
+</ul>
+<% end %>
+<%= link_to 'Go back', bridge_path(@bridge), class: "btn btn-primary" %>
