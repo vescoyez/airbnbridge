@@ -15,14 +15,15 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(booking_params)
+    @comment = Comment.new(comment_params)
+    @comment.booking = @booking
     respond_to do |format|
-      if @booking.save
+      if @comment.save
         format.html { redirect_to bridge_path(@bridge), notice: 'Your review has been added.' }
-        format.json { render :show, status: :created, location: @booking }
+        format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,7 +38,7 @@ class CommentsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
   end
 
-  def booking_params
+  def comment_params
     params.require(:comment).permit([:rating, :content, :booking_id])
   end
 end
