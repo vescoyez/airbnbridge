@@ -5,10 +5,8 @@
     <li>Checkin date: <%= @booking.checkin_date %></li>
     <li>Checkout date: <%= @booking.checkout_date %></li>
     <li>Price: <%= @booking.price %> €</li>
-      <% if @booking.people == 1  %>
-        <li><%= @booking.people %> hobo occupied</li>
-      <% else %>
-        <li><%= @booking.people %> hobos occupied</li>
-      <% end %>
+      <% hobo = "hobo" %>
+      <% count = @booking.people %>
+    <li><%= pluralize(count, hobo) %> occupied</li>
   </ul>
-  <%= link_to 'Go back', bridge_bookings_path, class: "btn btn-primary"%>
+  <%= link_to 'Review', new_bridge_booking_comment_path(@bridge, @booking), class: "btn btn-success"%>

@@ -25,6 +25,7 @@ class BridgesController < ApplicationController
   end
 
   def show
+    @booking = Booking.where(bridge_id: params[:id])
   end
 
   def edit
