@@ -1,13 +1,19 @@
-<h1>Pages#home</h1>
+<div class="home-bg">
+  <div class="container">
+    <div class="col-lg-8 col-lg-offset-2">
+      <%= form_tag bridges_path, method: "get", class: "inline-form home-form" do %>
+        <div class="input-group">
+          <%= text_field_tag :city, nil, {placeholder: "Where do you want to go?", class: "form-control"} %>
+          <%= text_field_tag :checkin, nil, {placeholder: "Checkin", class: "form-control"} %>
+          <%= text_field_tag :checkout, nil, {placeholder: "Checkout", class: "form-control"} %>
+          <%= select_tag :people, options_for_select((1..10).to_a.map { |i| ["#{i} Hobo#{if i>1 then 's' end}", i] }, "2"), class: "form-control" %>
+          <span class="input-group-btn">
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          </span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= form_tag(bridges_path, method: "get") do %>
-  <%= label_tag :city %>
-  <%= text_field_tag :city %>
-  <%= label_tag :checkin %>
-  <%= text_field_tag :checkin %>
-  <%= label_tag :checkout %>
-  <%= text_field_tag :checkout %>
-  <%= label_tag :people %>
-  <%= text_field_tag :people %>
-  <%= submit_tag("Search") %>
-<% end %>
+

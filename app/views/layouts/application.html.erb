@@ -10,13 +10,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
+    <%= yield %>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtolcX71DvcRWbY9hlqB618-XeNjHBfPE&libraries=places"></script>
     <%= javascript_include_tag 'application' %>
   </body>
