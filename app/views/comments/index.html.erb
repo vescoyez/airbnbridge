@@ -1,0 +1,10 @@
+<h1>List of reviews</h1>
+<p><strong>Venue</strong>: <%= @bridge.name %></p>
+<p><strong>Booking nr</strong>: <%= @booking.id %></p>
+
+<ul>
+  <% @comments.each do |comment| %>
+    <li><strong>Rating</strong>: <%= comment.rating %></li>
+    <li><strong>Review</strong>: <%= comment.content %></li>
+  <% end %>
+</ul>
