@@ -5,8 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.destroy_all
 Bridge.destroy_all
+User.destroy_all
+
 
 10.times do
   user = User.new
@@ -20,14 +21,12 @@ end
   Bridge.create(
     {
       name: Faker::App.name + " Bridge",
-      bridge_type: "modern",
+      bridge_type: Bridge::BRIDGE_TYPES.sample,
       description: Faker::Lorem.sentence,
       capacity: (1..10).to_a.sample,
       user_id: User.all.sample.id,
-      country: Faker::Address.country,
-      city: Faker::Address.city,
       address: Faker::Address.street_address,
-      price: [0.5,1,2].sample
+      price: [1,2].sample
     }
   )
 end
