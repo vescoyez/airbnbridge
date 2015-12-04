@@ -14,7 +14,7 @@
   }
   &-container {
     display: flex;
-    height: 70px;
+    height: 85px;
     align-items: center;
   }
   &-pusher {
@@ -70,10 +70,10 @@
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #D23333;
+    background-color: $brand-color;
     color: white;
     font-size: 14px;
-    border: 2px solid $brand-color;
+    border: 2px solid #018a96;
 
     &:hover {
       color: white;
