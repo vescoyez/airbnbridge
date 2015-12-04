@@ -11,9 +11,9 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtolcX71DvcRWbY9hlqB618-XeNjHBfPE&libraries=places"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyCdq5hTPaXxAyYATq_wtuQmNi4lALPGJ_M"></script>
     <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag
-        "https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyAWYrQvXuD6VADi-p5dd4fo5pfUl46_Ih0" %>
+
+    <%= render 'shared/footer' %>
   </body>
 </html>
