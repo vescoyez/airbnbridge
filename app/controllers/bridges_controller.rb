@@ -1,8 +1,13 @@
 class BridgesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home, :index, :show, :show_comments]
   before_action :set_bridge, only: [:show, :edit, :update, :destroy, :show_comments]
 
   def index
-    @bridges = Bridge.near(params[:city], 20)
+    if params[:city]
+      @bridges = Bridge.near(params[:city], 20)
+    else
+      @bridges = Bridge.all
+    end
   end
 
   def new
