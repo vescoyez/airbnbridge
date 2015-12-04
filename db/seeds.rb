@@ -25,7 +25,7 @@ end
       description: Faker::Lorem.sentence,
       capacity: (1..10).to_a.sample,
       user_id: User.all.sample.id,
-      address: Faker::Address.street_address,
+      address: "Grand-Place Bruxelles",
       price: [1,2].sample
     }
   )
