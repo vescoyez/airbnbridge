@@ -1,13 +1,19 @@
-<h1>Bridges#index</h1>
-<p>Find me in app/views/bridges/index.html.erb</p>
-<ol>
-  <% @bridges.each do |bridge| %>
-    <p><%= link_to bridge.name, bridge_path(bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]) %></p>
-    <ul>
-      <li><strong>Type</strong>: <%= bridge.bridge_type %></li>
-      <li><strong>Description</strong>: <%= truncate(bridge.description, length: 100) %></li>
-      <li><strong>Max capacity</strong>: <%= bridge.capacity %></li>
-      <li><strong>Price per night</strong>: <%= bridge.price %></li>
-    </ul>
+<h1>Bridges</h1>
+
+<p></p>
+  <% @bridges.each_with_index do |bridge, index| %>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <p><%= link_to bridge.name, bridge_path(bridge, checkin: params[:checkin], checkout: params[:checkout], people: params[:people]) %></p>
+        <p><%= image_tag "bridge#{index}.jpeg" %></p>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li><strong>Type</strong>: <%= bridge.bridge_type %></li>
+          <li><strong>Description</strong>: <%= truncate(bridge.description, length: 100) %></li>
+          <li><strong>Max capacity</strong>: <%= bridge.capacity %></li>
+          <li><strong>Price per night</strong>: <%= bridge.price %></li>
+        </ul>
+      </div>
+    </div>
   <% end %>
-</ol>

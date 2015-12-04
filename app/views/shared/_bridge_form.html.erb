@@ -1,7 +1,7 @@
 <%= form_for @bridge do |f| %>
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Golden Gate" %>
   </div>
   <div class="form-group">
     <%= f.label :bridge_type %>
@@ -11,19 +11,19 @@
   </div>
   <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
+    <%= f.text_area :description, class: "form-control", placeholder: "The Golden Gate is the North American strait that connects San Francisco Bay to the Pacific Ocean..." %>
   </div>
   <div class="form-group">
     <%= f.label :capacity %>
-    <%= f.text_field :capacity, class: "form-control" %>
+    <%= f.text_field :capacity, class: "form-control", placeholder: "Must be a number" %>
   </div>
   <div class="form-group">
     <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control" %>
+    <%= f.text_field :address, class: "form-control", placeholder: "San Francisco Bay" %>
   </div>
   <div class="form-group">
     <%= f.label :price %>
-    <%= f.text_field :price, class: "form-control" %>
+    <%= f.text_field :price, class: "form-control", placeholder: "Must be cheap" %>
   </div>
   <%= f.submit "Submit", class: 'btn btn-primary' %>
 <% end %>

@@ -2,19 +2,19 @@
 <h1>Confirm your booking options</h1>
 <p>Almost there...</p>
 
+ <%= link_to 'Go back', bridge_path(@bridge), class: "btn btn-primary"%>
+
 <p>Bridge <strong><%= @bridge.name %></strong></p>
 <p><em><%= @bridge.description %></em></p>
 <p> <%= @bridge.address %></p>
 <p> <strong>Price</strong>: <%= @bridge.price %> </p>
 
 <%= simple_form_for [@bridge, @booking] do |f| %>
+  <div class="container text-center">
   <%= f.input :checkin_date, input_html: { value: params[:checkin] } %>
   <%= f.input :checkout_date, input_html: { value: params[:checkout] } %>
   <%= f.input :people, input_html: { value: params[:people] } %>
-  <%= f.button :submit, class: "btn btn-success" %>
+    <%= f.button :submit, class: "btn btn-success" %>
+  </div>
 <% end %>
-
-
-
- <%= link_to 'Go back', bridge_path(@bridge), class: "btn btn-primary"%>
 
