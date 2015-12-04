@@ -17,6 +17,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'geocoder'
+gem 'faker'
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -25,7 +26,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  gem 'faker'
 end
 
 group :production do
